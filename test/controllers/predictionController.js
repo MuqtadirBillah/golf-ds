@@ -62,7 +62,8 @@ const predictData = (req, res)=>{
             console.table(r)
             console.table(r.Play)
             predictions.push({ Play: r.Play })
-            r.play = undefined;
+            delete r.play;
+            // r.play = undefined;
         })
         features = results
         let result = net.run([1,0]);
