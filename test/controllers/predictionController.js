@@ -60,14 +60,14 @@ const predictData = (req, res)=>{
                 delete r.Play;
                 delete r['Play'];
                 console.table(r)
-                trainData.append({
+                trainingData.append({
                     input: r,
                     output: { Play: status }
                 })
             })
             console.error("Incoming Training Data")
-            console.table(trainData)
-            net.train(trainData);
+            console.table(trainingData)
+            net.train(trainingData);
         features = results
         let result = net.run([1,0]);
         console.log("Features")
