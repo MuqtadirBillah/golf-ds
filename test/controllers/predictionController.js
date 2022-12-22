@@ -121,6 +121,7 @@ const classifyData = async (req, res)=>{
                 let input = [];
                 console.log(Object.keys(r))
                 Object.keys(r).forEach((e, index)=>{
+                    console.log(e)
                     input.push(e)
                     console.log("Length", index)
                     console.log("Object Key Length", Object.keys(r).length-1)
