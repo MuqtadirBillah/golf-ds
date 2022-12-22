@@ -148,7 +148,8 @@ const classifyData = async (req, res)=>{
         console.log(trainingData[3])
         // let result = net.run(trainingData[3]);
         let result = classifier.categorize(trainingData[2].input)
-        console.log("Prediction made by Machine", result)
+        console.log("Prediction made by Machine")
+        console.log(result)
     });
     
     res.send(`Hello`)
