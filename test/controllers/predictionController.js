@@ -30,7 +30,9 @@ const trainData = ()=>{
 
 const predictData = (req, res)=>{
     trainData();
-    res.send("Hello")
+    result = network.run([1,0]);
+    console.log(result)
+    res.send("Hello", result)
 }
 
 module.exports = {
