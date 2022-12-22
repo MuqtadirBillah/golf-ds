@@ -59,10 +59,11 @@ const predictData = (req, res)=>{
         console.log(results.length)
         console.log(typeof results)
         results.forEach(r=>{
+            predictions.push({ Play: r.Play })
+            delete r.Play;
+            delete r['Play'];
             console.table(r)
             console.table(r.Play)
-            predictions.push({ Play: r.Play })
-            delete r.play;
             // r.play = undefined;
         })
         features = results
