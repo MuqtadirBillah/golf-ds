@@ -3,9 +3,9 @@ const fs = require('fs')
 const brain = require("brain.js");
 const net = new brain.NeuralNetwork();
 
-let results = [];
 
 const readCSV = ()=>{
+    let results = [];
     fs.createReadStream('./dataset/golf.csv')
     .pipe(csv())
     .on('data', (data) => results.push(data))
@@ -22,7 +22,9 @@ const readCSV = ()=>{
 const trainData = ()=>{
     let result = readCSV()
     console.log(readCSV())
-    result.forEach
+    result.forEach((d)=>{
+        console.log(d)
+    })
     net.train([
         { input: { r: 0.03, g: 0.7, b: 0.5 }, output: { black: 1 } },
         { input: { r: 0.16, g: 0.09, b: 0.2 }, output: { white: 1 } },
