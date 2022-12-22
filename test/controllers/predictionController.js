@@ -70,8 +70,11 @@ const predictData = (req, res)=>{
             net.train(trainingData);
         features = results
         console.log(trainingData[3])
+        trainingData.forEach((e)=>{
+            console.log(net.run(e))
+        })
         let result = net.run(trainingData[3]);
-        console.log("Prediction made by Machine", result)
+        // console.log("Prediction made by Machine", result)
     });
     
     res.send(`Hello`)
