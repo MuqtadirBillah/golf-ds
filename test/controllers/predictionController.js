@@ -60,7 +60,7 @@ const predictData = (req, res)=>{
                 delete r.Play;
                 delete r['Play'];
                 console.table(r)
-                trainingData.append({
+                trainingData.push({
                     input: r,
                     output: { Play: status }
                 })
