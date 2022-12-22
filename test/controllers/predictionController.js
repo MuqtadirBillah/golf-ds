@@ -8,7 +8,10 @@ const readCSV = ()=>{
     const results = [];
     fs.createReadStream('./dataset/golf.csv')
     .pipe(csv())
-    .on('data', (data) => results.push(data))
+    .on('data', (data) =>{
+        console.log(data)
+        results.push(data)
+    })
     .on('end', () => {
         console.log("Reading in CSV")
         console.table(results);
