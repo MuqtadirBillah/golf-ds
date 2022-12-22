@@ -71,6 +71,7 @@ const predictData = (req, res)=>{
         features = results
         console.log(trainingData[3])
         trainingData.forEach((e)=>{
+            console.log(e)
             console.log(net.run(e))
         })
         let result = net.run(trainingData[3]);
