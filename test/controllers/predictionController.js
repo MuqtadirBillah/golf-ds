@@ -32,7 +32,7 @@ const predictData = (req, res)=>{
     trainData();
     result = net.run([1,0]);
     console.log(result)
-    res.send("Hello", result)
+    res.send(`Hello ${result}`)
 }
 
 module.exports = {
