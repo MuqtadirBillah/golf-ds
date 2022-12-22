@@ -10,7 +10,7 @@ const readCSV = ()=>{
     .pipe(csv())
     .on('data', (data) => results.push(data))
     .on('end', () => {
-        console.log(results);
+        // console.log(results);
         // [
         //   { NAME: 'Daffy Duck', AGE: '24' },
         //   { NAME: 'Bugs Bunny', AGE: '22' }
@@ -33,7 +33,7 @@ const trainData = ()=>{
 const predictData = (req, res)=>{
     trainData();
     result = net.run([1,0]);
-    console.log(result)
+    console.log(results)
     res.send(`Hello ${result}`)
 }
 
