@@ -51,21 +51,23 @@ const predictData = (req, res)=>{
             //   { NAME: 'Daffy Duck', AGE: '24' },
             //   { NAME: 'Bugs Bunny', AGE: '22' }
             // ]
-        net.train([
-            { input: { r: 0.03, g: 0.7, b: 0.5 }, output: { black: 1 } },
-            { input: { r: 0.16, g: 0.09, b: 0.2 }, output: { white: 1 } },
-            { input: { r: 0.5, g: 0.5, b: 1.0 }, output: { white: 1 } },
-        ]);
-        console.log(results.length)
-        console.log(typeof results)
-        results.forEach(r=>{
-            predictions.push({ Play: r.Play })
-            delete r.Play;
-            delete r['Play'];
-            console.table(r)
-            console.table(r.Play)
-            // r.play = undefined;
-        })
+            console.log(results.length)
+            console.log(typeof results)
+            let trainingData = []
+            results.forEach(r=>{
+                let status = r.Play
+                predictions.push({ Play: r.Play })
+                delete r.Play;
+                delete r['Play'];
+                console.table(r)
+                trainData.append({
+                    input: r,
+                    output: { Play: status }
+                })
+            })
+            console.error("Incoming Training Data")
+            console.table(trainData)
+            net.train(trainData);
         features = results
         let result = net.run([1,0]);
         console.log("Features")
