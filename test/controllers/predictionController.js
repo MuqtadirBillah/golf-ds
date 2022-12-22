@@ -24,9 +24,9 @@ const trainData = ()=>{
     let results = readCSV()
     console.log(readCSV())
     console.log(typeof readCSV())
-    results.forEach((d)=>{
-        console.log(d)
-    })
+    // results.forEach((d)=>{
+    //     console.log(d)
+    // })
     net.train([
         { input: { r: 0.03, g: 0.7, b: 0.5 }, output: { black: 1 } },
         { input: { r: 0.16, g: 0.09, b: 0.2 }, output: { white: 1 } },
