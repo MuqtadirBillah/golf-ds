@@ -20,9 +20,9 @@ const readCSV = ()=>{
 }
 
 const trainData = ()=>{
-    let result = readCSV()
+    let results = readCSV()
     console.log(readCSV())
-    result.forEach((d)=>{
+    results.forEach((d)=>{
         console.log(d)
     })
     net.train([
