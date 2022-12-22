@@ -5,12 +5,12 @@ const net = new brain.NeuralNetwork();
 
 
 const readCSV = ()=>{
-    let results = [];
+    const results = [];
     fs.createReadStream('./dataset/golf.csv')
     .pipe(csv())
     .on('data', (data) => results.push(data))
     .on('end', () => {
-        // console.log(results);
+        console.log(results);
         // [
         //   { NAME: 'Daffy Duck', AGE: '24' },
         //   { NAME: 'Bugs Bunny', AGE: '22' }
