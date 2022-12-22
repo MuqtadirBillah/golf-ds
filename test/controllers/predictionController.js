@@ -61,17 +61,18 @@ const predictData = (req, res)=>{
                 delete r.Play;
                 delete r['Play'];
                 console.table(r)
-                let input = "";
+                let input = [];
                 console.log(Object.keys(r))
                 Object.keys(r).forEach((e, index)=>{
+                    input.push(e)
                     console.log("Length", index)
                     console.log("Object Key Length", Object.keys(r).length-1)
-                    if(Object.keys(r).length-1==index){
-                        input=input+e+""
-                    }
-                    else{
-                        input=input+e+", "
-                    }
+                    // if(Object.keys(r).length-1==index){
+                    //     input=input+e+""
+                    // }
+                    // else{
+                    //     input=input+e+", "
+                    // }
                 })
                 trainingData.push({
                     input: [input],
