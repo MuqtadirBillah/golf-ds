@@ -12,12 +12,12 @@ const readCSV = ()=>{
     .on('end', () => {
         console.log("Reading in CSV")
         console.table(results);
+        return results
         // [
         //   { NAME: 'Daffy Duck', AGE: '24' },
         //   { NAME: 'Bugs Bunny', AGE: '22' }
         // ]
     });
-    return results
 }
 
 const trainData = ()=>{
