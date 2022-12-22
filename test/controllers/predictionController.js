@@ -49,20 +49,20 @@ const predictData = (req, res)=>{
             //   { NAME: 'Daffy Duck', AGE: '24' },
             //   { NAME: 'Bugs Bunny', AGE: '22' }
             // ]
+        net.train([
+            { input: { r: 0.03, g: 0.7, b: 0.5 }, output: { black: 1 } },
+            { input: { r: 0.16, g: 0.09, b: 0.2 }, output: { white: 1 } },
+            { input: { r: 0.5, g: 0.5, b: 1.0 }, output: { white: 1 } },
+        ]);
+        console.log(results.length)
+        console.log(typeof results)
+        results.forEach(r=>{
+            console.log(r)
+        })
+        let result = net.run([1,0]);
+        console.log(result)
     });
     
-    net.train([
-        { input: { r: 0.03, g: 0.7, b: 0.5 }, output: { black: 1 } },
-        { input: { r: 0.16, g: 0.09, b: 0.2 }, output: { white: 1 } },
-        { input: { r: 0.5, g: 0.5, b: 1.0 }, output: { white: 1 } },
-    ]);
-    console.log(results.length)
-    console.log(typeof results)
-    results.forEach(r=>{
-        console.log(r)
-    })
-    let result = net.run([1,0]);
-    console.log(result)
     res.send(`Hello ${result}`)
 }
 
