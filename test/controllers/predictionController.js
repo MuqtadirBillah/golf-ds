@@ -118,11 +118,11 @@ const classifyData = async (req, res)=>{
                 delete r.Play;
                 delete r['Play'];
                 console.table(r)
-                let input = [];
+                let input = "";
                 console.log(Object.keys(r))
                 Object.keys(r).forEach((e, index)=>{
                     console.log(e)
-                    input.push(e)
+                    // input.push(e)
                     console.log("Length", index)
                     console.log("Object Key Length", Object.keys(r).length-1)
                     if(Object.keys(r).length-1==index){
