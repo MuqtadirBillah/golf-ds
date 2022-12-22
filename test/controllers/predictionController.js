@@ -12,12 +12,12 @@ const readCSV = ()=>{
     .on('end', () => {
         console.log("Reading in CSV")
         console.table(results);
-        return results
         // [
-        //   { NAME: 'Daffy Duck', AGE: '24' },
-        //   { NAME: 'Bugs Bunny', AGE: '22' }
-        // ]
+            //   { NAME: 'Daffy Duck', AGE: '24' },
+            //   { NAME: 'Bugs Bunny', AGE: '22' }
+            // ]
     });
+    return(results)
 }
 
 const trainData = ()=>{
@@ -32,10 +32,12 @@ const trainData = ()=>{
         { input: { r: 0.16, g: 0.09, b: 0.2 }, output: { white: 1 } },
         { input: { r: 0.5, g: 0.5, b: 1.0 }, output: { white: 1 } },
     ]);
+    return(results)
 }
 
 const predictData = (req, res)=>{
     trainData();
+    console.log(trainData());
     result = net.run([1,0]);
     console.log(result)
     res.send(`Hello ${result}`)
