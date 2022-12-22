@@ -63,7 +63,8 @@ const predictData = (req, res)=>{
                 let input = "";
                 console.log(Object.keys(r))
                 Object.keys(r).forEach((e, index)=>{
-                    ()=>Object.keys(r).length-1==index? index+=e+"" : index+=e+", "
+                    console.log("Length", index)
+                    Object.keys(r).length-1==index? index+=e+"" : index+=e+", "
                 })
                 trainingData.push({
                     input: input,
