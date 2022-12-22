@@ -63,7 +63,7 @@ const predictData = (req, res)=>{
         console.log(result)
     });
     
-    res.send(`Hello ${result}`)
+    res.send(`Hello`)
 }
 
 module.exports = {
