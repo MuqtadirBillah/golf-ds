@@ -69,7 +69,7 @@ const predictData = (req, res)=>{
             console.table(trainingData)
             net.train(trainingData);
         features = results
-        let result = net.run([1,0]);
+        let result = net.run(features[3]);
         console.log("Prediction made by Machine", result)
     });
     
