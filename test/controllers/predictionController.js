@@ -57,7 +57,7 @@ const predictData = (req, res)=>{
         console.log(results.length)
         console.log(typeof results)
         results.forEach(r=>{
-            console.log(r)
+            console.table(r)
         })
         let result = net.run([1,0]);
         console.log(result)
