@@ -30,6 +30,7 @@ const trainData = ()=>{
 
 const predictData = (req, res)=>{
     trainData();
+    res.send("Hello")
 }
 
 module.exports = {
