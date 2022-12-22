@@ -73,8 +73,8 @@ const predictData = (req, res)=>{
                     }
                 })
                 trainingData.push({
-                    input: input,
-                    output: status
+                    input: [input],
+                    output: [status]
                 })
             })
             console.error("Incoming Training Data")
