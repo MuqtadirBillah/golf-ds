@@ -45,6 +45,8 @@ const predictData = (req, res)=>{
     })
     .on('end', () => {
         console.table(results)
+        let features = []
+        let predictions = []
         // [
             //   { NAME: 'Daffy Duck', AGE: '24' },
             //   { NAME: 'Bugs Bunny', AGE: '22' }
@@ -58,9 +60,15 @@ const predictData = (req, res)=>{
         console.log(typeof results)
         results.forEach(r=>{
             console.table(r)
+            predictions.push({ play: r.play })
+            r.play = undefined;
         })
+        features = results
         let result = net.run([1,0]);
-        console.log(result)
+        console.log("Features")
+        console.table(features)
+        console.log("Predictions")
+        console.table(predictions)
     });
     
     res.send(`Hello`)
