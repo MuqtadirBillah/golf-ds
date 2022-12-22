@@ -62,7 +62,7 @@ const predictData = (req, res)=>{
                 console.table(r)
                 trainingData.push({
                     input: r,
-                    output: { Play: status }
+                    output: status
                 })
             })
             console.error("Incoming Training Data")
@@ -70,13 +70,8 @@ const predictData = (req, res)=>{
             net.train(trainingData);
         features = results
         console.log(trainingData[3])
-        trainingData.forEach((e)=>{
-            console.log("-------------------------------")
-            console.log(e)
-            console.log(net.run(e))
-        })
         let result = net.run(trainingData[3]);
-        // console.log("Prediction made by Machine", result)
+        console.log("Prediction made by Machine", result)
     });
     
     res.send(`Hello`)
