@@ -63,10 +63,10 @@ const predictData = (req, res)=>{
                 let input = "";
                 console.log(Object.keys(r))
                 Object.keys(r).forEach((e)=>{
-                    console.log(e)
+                    input+=e+", "
                 })
                 trainingData.push({
-                    input: r,
+                    input: input,
                     output: status
                 })
             })
