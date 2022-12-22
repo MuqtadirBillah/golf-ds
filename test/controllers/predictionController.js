@@ -75,7 +75,7 @@ const predictData = (req, res)=>{
                     // }
                 })
                 trainingData.push({
-                    input: [input],
+                    input: input,
                     output: [status]
                 })
             })
