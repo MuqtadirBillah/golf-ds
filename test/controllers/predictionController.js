@@ -41,10 +41,10 @@ const predictData = (req, res)=>{
     fs.createReadStream('./dataset/golf.csv')
     .pipe(csv())
     .on('data', (data) =>{
-        console.log(data)
         results.push(data)
     })
     .on('end', () => {
+        console.table(results)
         // [
             //   { NAME: 'Daffy Duck', AGE: '24' },
             //   { NAME: 'Bugs Bunny', AGE: '22' }
