@@ -56,6 +56,8 @@ const predictData = (req, res)=>{
         { input: { r: 0.16, g: 0.09, b: 0.2 }, output: { white: 1 } },
         { input: { r: 0.5, g: 0.5, b: 1.0 }, output: { white: 1 } },
     ]);
+    console.log(results.length)
+    console.log(typeof results)
     results.forEach(r=>{
         console.log(r)
     })
