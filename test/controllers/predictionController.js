@@ -35,7 +35,7 @@ const trainData = ()=>{
 const predictData = (req, res)=>{
     trainData();
     result = net.run([1,0]);
-    console.log(results)
+    console.log(result)
     res.send(`Hello ${result}`)
 }
 
