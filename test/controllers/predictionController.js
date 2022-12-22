@@ -55,7 +55,7 @@ const predictData = (req, res)=>{
             console.log(typeof results)
             let trainingData = []
             results.forEach(r=>{
-                let status = r.Play
+                let status = (r.Play=='yes') ? 1 : 2
                 predictions.push({ Play: (r.Play=='yes') ? 1 : 2 })
                 delete r.Play;
                 delete r['Play'];
