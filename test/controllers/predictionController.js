@@ -13,8 +13,6 @@ const readCSV = ()=>{
         results.push(data)
     })
     .on('end', () => {
-        console.log("Reading in CSV")
-        console.table(results);
         // [
             //   { NAME: 'Daffy Duck', AGE: '24' },
             //   { NAME: 'Bugs Bunny', AGE: '22' }
@@ -39,7 +37,7 @@ const trainData = ()=>{
 }
 
 const predictData = (req, res)=>{
-    trainData();
+    console.log(trainData());
     result = net.run([1,0]);
     console.log(result)
     res.send(`Hello ${result}`)
