@@ -93,7 +93,7 @@ const predictData = (req, res)=>{
     res.send(`Hello`)
 }
 
-const classify = async (req, res)=>{
+const classifyData = async (req, res)=>{
     const results = [];
     fs.createReadStream('./dataset/golf.csv')
     .pipe(csv())
@@ -154,5 +154,6 @@ const classify = async (req, res)=>{
 }
 
 module.exports = {
-    predictData
+    predictData,
+    classifyData
 }
