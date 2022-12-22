@@ -25,8 +25,8 @@ const readCSV = ()=>{
 
 const trainData = ()=>{
     let results = readCSV()
-    console.log(readCSV())
-    console.log(typeof readCSV())
+    // console.log(readCSV())
+    // console.log(typeof readCSV())
     // results.forEach((d)=>{
     //     console.log(d)
     // })
@@ -40,7 +40,6 @@ const trainData = ()=>{
 
 const predictData = (req, res)=>{
     trainData();
-    console.log(trainData());
     result = net.run([1,0]);
     console.log(result)
     res.send(`Hello ${result}`)
